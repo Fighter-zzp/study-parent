@@ -3,12 +3,13 @@ version = '0.0.1-SNAPSHOT'
 apply plugin: 'java'
 sourceCompatibility = 11
 
-buildscript {
+// 统一依赖
+apply from: "config.gradle"
 
+buildscript {
     ext {
         //定义一个变量，统一规定springboot的版本
         springBootVersion = '2.3.4.RELEASE'
-        springCloudVersion = 'Hoxton.SR8'
     }
 
     repositories {
@@ -17,7 +18,8 @@ buildscript {
         mavenCentral()
     }
 
-    dependencies {//用来打包
+    //用来打包
+    dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
     }
 }
@@ -42,14 +44,17 @@ subprojects {
     apply plugin: 'io.spring.dependency-management'
     //一个Gradle插件，提供类似Maven的依赖关系管理功能
     dependencies {
-        compile ('org.springframework.boot:spring-boot-starter-web')
-        testCompile('org.springframework.boot:spring-boot-starter-test')
+        compile('org.springframework.boot:spring-boot-starter-web')
+        testCompile('org.springframework.boot:spring-boot-starter-test'){
+            exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+        }
     }
 
     dependencyManagement {
         imports {
             //spring bom帮助我们在不指定版本号的情况下声明依赖关系
-            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+//            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+            mavenBom rootProject.ext.dependencies['spring-cloud']
         }
     }
 

@@ -1,3 +1,9 @@
 dependencies {
     compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-server')
+    compile(rootProject.ext.dependencies["tk-mybatis"])
+    compile('com.zaxxer:HikariCP')
+    compile('mysql:mysql-connector-java')
+    compile('org.springframework.boot:spring-boot-starter-jdbc') {
+        exclude group: 'org.apache.tomcat', module: 'tomcat-jdbc'
+    }
 }

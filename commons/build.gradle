@@ -1,0 +1,6 @@
+dependencies {
+    archives('com.fasterxml.jackson.core:jackson-databind')
+    compile('javax.persistence:javax.persistence-api')
+    compile(rootProject.ext.dependencies["tk-mybatis"])
+    archives('org.projectlombok:lombok')
+}

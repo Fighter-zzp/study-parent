@@ -1,0 +1,18 @@
+ext {
+    version = [
+            springBootVersion : '2.3.4.RELEASE',
+            springCloudVersion: 'Hoxton.SR8',
+            tkMybatisVersion  : '2.1.5',
+            swaggerVersion    : '2.9.2',
+            knife4jVersion    : '3.0'
+    ]
+
+    dependencies = [
+            "spring-cloud"             : "org.springframework.cloud:spring-cloud-dependencies:${version.springCloudVersion}",
+            "spring-boot-gradle-plugin": "org.springframework.boot:spring-boot-gradle-plugin:${version.springBootVersion}",
+            "tk-mybatis"               : "tk.mybatis:mapper-spring-boot-starter:${version.tkMybatisVersion}",
+            "swagger2-version"         : "io.springfox:springfox-swagger2:${version.swaggerVersion}",
+            "swagger-ui-version"       : "io.springfox:springfox-swagger-ui:${version.swaggerVersion}",
+            "knife4j-version"          : "com.github.xiaoymin:knife4j-spring-boot-starter:${version.knife4jVersion}"
+    ]
+}
