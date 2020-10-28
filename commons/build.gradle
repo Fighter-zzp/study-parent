@@ -1,6 +1,7 @@
 dependencies {
-    archives('com.fasterxml.jackson.core:jackson-databind')
+    // 相当于maven provided
+    compileOnly ('com.fasterxml.jackson.core:jackson-databind')
     compile('javax.persistence:javax.persistence-api')
-    compile(rootProject.ext.dependencies["tk-mybatis"])
-    archives('org.projectlombok:lombok')
+    compileOnly (rootProject.ext.dependencies["tk-mybatis"])
+    compile('org.projectlombok:lombok')
 }
