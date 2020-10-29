@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zzp.study.provider.mapper.StuSignMapper">
+  <resultMap id="BaseResultMap" type="com.zzp.study.provider.domain.StuSign">
+    <!--@mbg.generated generated on Thu Oct 29 01:00:33 CST 2020.-->
+    <!--@Table stu_sign-->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="class_name" jdbcType="VARCHAR" property="className" />
+    <result column="s_time" jdbcType="TIMESTAMP" property="sTime" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated generated on Thu Oct 29 01:00:33 CST 2020.-->
+    id, `name`, class_name, s_time, `type`
+  </sql>
+</mapper>

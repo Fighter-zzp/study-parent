@@ -6,4 +6,5 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-jdbc') {
         exclude group: 'org.apache.tomcat', module: 'tomcat-jdbc'
     }
+    compile project(':commons')
 }
