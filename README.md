@@ -1,2 +1,2 @@
 # study-parent
-练习使用gradle构建springCliud项目
+这个分支是练习构建阿里巴巴项目的

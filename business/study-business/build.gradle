@@ -1,6 +1,0 @@
-dependencies {
-    compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-server')
-    compile('org.springframework.cloud:spring-cloud-starter-openfeign')
-    compile(rootProject.ext.dependencies["knife4j-version"])
-    compile project(':business:business-feign')
-}
