@@ -1,0 +1,21 @@
+dependencies {
+    // springboot
+    compile('org.springframework.boot:spring-boot-starter')
+    compile('org.springframework.boot:spring-boot-starter-actuator')
+    compile('org.springframework.boot:spring-boot-starter-jdbc') {
+        exclude group: 'org.apache.tomcat', module: 'tomcat-jdbc'
+    }
+    testCompile('org.springframework.boot:spring-boot-starter-test'){
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    }
+    // 数据库
+    compile(rootProject.ext.dependencies["tk-mybatis"]){
+
+    }
+    compile('com.zaxxer:HikariCP')
+    compile('mysql:mysql-connector-java')
+
+    // project
+    compile(project(':provider:provider-sign-api'))
+
+}

@@ -1,0 +1,23 @@
+subprojects {
+    dependencies {
+        //Apache Dubbo
+        compile('com.alibaba.nacos:nacos-client')
+        compile(rootProject.ext.dependencies["dubbo-registry-nacos"])
+        compile(rootProject.ext.dependencies["dubbo-spring-boot-starter"])
+        compile(rootProject.ext.dependencies["dubbo-spring-boot-actuator"])
+        compile(rootProject.ext.dependencies["dubbo"]){
+            exclude group : 'org.springframework', module:'spring'
+            exclude group : 'javax.servlet', module:'servlet-api'
+            exclude group : 'log4j', module:'log4j'
+        }
+        compile(rootProject.ext.dependencies["dubbo-serialization-kryo"]){
+            exclude group : 'org.apache.dubbo', module:'dubbo-common'
+            exclude group : 'log4j', module:'log4j'
+        }
+        // else
+        compile(rootProject.ext.dependencies["spring-context-support"])
+
+        // project
+        compile(project(':commons'))
+    }
+}

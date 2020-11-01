@@ -1,0 +1,16 @@
+dependencies {
+    // springboot
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.springframework.boot:spring-boot-starter-actuator')
+    testCompile('org.springframework.boot:spring-boot-starter-test'){
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    }
+    // nacos
+    compile(rootProject.ext.dependencies["nacos-dicovery"])
+
+    //else
+    compile(rootProject.ext.dependencies["knife4j-version"])
+
+    // project
+    compile(project(':provider:provider-sign-api'))
+}

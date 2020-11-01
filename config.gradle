@@ -1,18 +1,36 @@
 ext {
     version = [
-            springBootVersion : '2.3.4.RELEASE',
-            springCloudVersion: 'Hoxton.SR8',
-            tkMybatisVersion  : '2.1.5',
-            swaggerVersion    : '2.9.2',
-            knife4jVersion    : '3.0'
+            springBootVersion                 : '2.3.4.RELEASE',
+            springCloudVersion                : 'Hoxton.SR8',
+            tkMybatisVersion                  : '2.1.5',
+            swaggerVersion                    : '2.9.2',
+            knife4jVersion                    : '3.0',
+            // springAlibaba
+            springCloudAlibabaVersion         : '2.2.3.RELEASE',
+            nacoVersion                       : '1.3.2',
+            dubboVersion                      : '2.7.8',
+            alibabaSpringContextSupportVersion: '1.0.11'
+
     ]
 
     dependencies = [
-            "spring-cloud"             : "org.springframework.cloud:spring-cloud-dependencies:${version.springCloudVersion}",
-            "spring-boot-gradle-plugin": "org.springframework.boot:spring-boot-gradle-plugin:${version.springBootVersion}",
-            "tk-mybatis"               : "tk.mybatis:mapper-spring-boot-starter:${version.tkMybatisVersion}",
-            "swagger2-version"         : "io.springfox:springfox-swagger2:${version.swaggerVersion}",
-            "swagger-ui-version"       : "io.springfox:springfox-swagger-ui:${version.swaggerVersion}",
-            "knife4j-version"          : "com.github.xiaoymin:knife4j-spring-boot-starter:${version.knife4jVersion}"
+            // spring-cloud
+            "spring-cloud"              : "org.springframework.cloud:spring-cloud-dependencies:${version.springCloudVersion}",
+            "spring-cloud-alibaba"      : "com.alibaba.cloud:spring-cloud-alibaba-dependencies:${version.springCloudAlibabaVersion}",
+            "spring-boot-gradle-plugin" : "org.springframework.boot:spring-boot-gradle-plugin:${version.springBootVersion}",
+            // nacos
+            "nacos-dicovery"            : "com.alibaba.cloud:spring-cloud-starter-alibaba-nacos-discovery:${version.springCloudAlibabaVersion}",
+            // Apache Dubbo
+            "dubbo-spring-boot-starter" : "org.apache.dubbo:dubbo-spring-boot-starter:${version.dubboVersion}",
+            "dubbo-registry-nacos"      : "org.apache.dubbo:dubbo-registry-nacos:${version.dubboVersion}",
+            "dubbo-spring-boot-actuator": "org.apache.dubbo:dubbo-spring-boot-actuator:${version.dubboVersion}",
+            "dubbo"                     : "org.apache.dubbo:dubbo:${version.dubboVersion}",
+            "dubbo-serialization-kryo"  : "org.apache.dubbo:dubbo-serialization-kryo:${version.dubboVersion}",
+            // else
+            "spring-context-support"    : "com.alibaba.spring:spring-context-support:${version.alibabaSpringContextSupportVersion}",
+            "tk-mybatis"                : "tk.mybatis:mapper-spring-boot-starter:${version.tkMybatisVersion}",
+            "swagger2-version"          : "io.springfox:springfox-swagger2:${version.swaggerVersion}",
+            "swagger-ui-version"        : "io.springfox:springfox-swagger-ui:${version.swaggerVersion}",
+            "knife4j-version"           : "com.github.xiaoymin:knife4j-spring-boot-starter:${version.knife4jVersion}",
     ]
 }

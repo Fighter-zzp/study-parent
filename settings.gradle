@@ -1,2 +1,4 @@
 rootProject.name = 'study-parent'
 include 'commons'
+include ':provider:provider-sign-service',':provider:provider-sign-api'
+include ':business:business-stu-sign:'
