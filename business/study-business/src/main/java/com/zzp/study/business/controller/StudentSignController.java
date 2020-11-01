@@ -36,14 +36,14 @@ public class StudentSignController {
     private StudentSignFeign studentSignFeign;
 
     @ApiOperation(value = "保存签到信息", notes = "save")
-    @ApiImplicitParams({@ApiImplicitParam(name = "签到参数", required = true, paramType = "json")})
+    @ApiImplicitParams({@ApiImplicitParam(name = "签到参数", required = true, paramType = "body")})
     @PostMapping("/save.do")
     public ResultVo save(@RequestBody SignDto dto) {
         return studentSignFeign.save(dto);
     }
 
     @ApiOperation(value = "查询签到信息", notes = "通过名字查询签到")
-    @ApiImplicitParams({@ApiImplicitParam(name = "名字", required = true, paramType = "text")})
+    @ApiImplicitParams({@ApiImplicitParam(name = "名字", required = true, paramType = "query")})
     @GetMapping("/query_name.do")
     public ResultVo names(@RequestParam String name) {
         return studentSignFeign.names(name);
