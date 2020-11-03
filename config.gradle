@@ -32,5 +32,6 @@ ext {
             "swagger2-version"          : "io.springfox:springfox-swagger2:${version.swaggerVersion}",
             "swagger-ui-version"        : "io.springfox:springfox-swagger-ui:${version.swaggerVersion}",
             "knife4j-version"           : "com.github.xiaoymin:knife4j-spring-boot-starter:${version.knife4jVersion}",
+            "knife4j-micro-version"     : "com.github.xiaoymin:knife4j-micro-spring-boot-starter:${version.knife4jVersion}",
     ]
 }

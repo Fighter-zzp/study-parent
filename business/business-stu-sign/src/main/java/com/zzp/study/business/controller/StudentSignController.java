@@ -1,6 +1,8 @@
 package com.zzp.study.business.controller;
 
 
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
+import com.zzp.study.business.controller.fallback.StuSignFallback;
 import com.zzp.study.common.dto.SignDto;
 import com.zzp.study.common.vo.ResultVo;
 import com.zzp.study.provider.service.StudentSignService;
@@ -29,7 +31,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @see com.zzp.study.business.controller
  **/
 @RestController
-@RequestMapping("/busi")
+//@RequestMapping("/api/sign")
 @Api(value = "签到接口", tags = "签到功能")
 public class StudentSignController {
 
@@ -38,20 +40,23 @@ public class StudentSignController {
 
     @ApiOperation(value = "保存签到信息", notes = "save", httpMethod = "POST")
     @ApiImplicitParams({@ApiImplicitParam(name = "签到参数", required = true, paramType = "body")})
-    @PostMapping("/api/sign/save.do")
+    @PostMapping("/save.do")
+    @SentinelResource(value = "save", fallback = "signFallback", fallbackClass = StuSignFallback.class)
     public ResultVo save(@RequestBody SignDto dto) {
         return studentSignService.sign(dto);
     }
 
     @ApiOperation(value = "查询签到信息", notes = "通过名字查询签到", httpMethod = "GET")
     @ApiImplicitParams({@ApiImplicitParam(name = "名字", required = true, paramType = "query")})
-    @GetMapping("/api/sign/queryname.do")
+    @GetMapping("/queryname.do")
+    @SentinelResource(value = "names", fallback = "signFallback", fallbackClass = StuSignFallback.class)
     public ResultVo names(@RequestParam String name) {
         return studentSignService.queryByName(name);
     }
 
     @ApiOperation(value = "查询全部签到信息", notes = "这里测试熔断(暂无)", httpMethod = "GET")
-    @GetMapping("/api/sign/all.do")
+    @GetMapping("/all.do")
+    @SentinelResource(value = "all", fallback = "signFallback", fallbackClass = StuSignFallback.class)
     public ResultVo all() {
         return studentSignService.queryAll();
     }

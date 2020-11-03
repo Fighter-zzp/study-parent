@@ -53,6 +53,7 @@ public class StudentSignServiceImpl implements StudentSignService {
 
     @Override
     public ResultVo queryAll() {
+        int i = 1 / 0;
         return ResultVo.ok(stuSignMapper.selectAll());
     }
 }

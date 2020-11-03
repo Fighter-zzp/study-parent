@@ -8,8 +8,11 @@ dependencies {
     // nacos
     compile(rootProject.ext.dependencies["nacos-dicovery"])
 
+    compile('com.alibaba.cloud:spring-cloud-starter-alibaba-sentinel')
+
     //else
-    compile(rootProject.ext.dependencies["knife4j-version"])
+    compile(rootProject.ext.dependencies["knife4j-micro-version"])
+    compile('org.hibernate:hibernate-validator:6.0.18.Final')
 
     // project
     compile(project(':provider:provider-sign-api'))
