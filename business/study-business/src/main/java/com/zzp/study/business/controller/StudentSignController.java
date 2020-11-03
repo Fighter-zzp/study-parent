@@ -29,7 +29,7 @@ import javax.annotation.Resource;
  * @see com.zzp.study.business.controller
  **/
 @RestController
-@RequestMapping(value = "/api/sign")
+@RequestMapping(value = "/sign")
 @Api(value = "签到接口", tags = "签到功能")
 public class StudentSignController {
     @Resource

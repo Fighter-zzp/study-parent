@@ -4,3 +4,4 @@ include ':provider:study-provider'
 include ':business:business-feign',
         ':business:study-business'
 include 'commons'
+include 'study-zuul'

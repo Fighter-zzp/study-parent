@@ -37,7 +37,7 @@ public interface StudentSignFeign {
      * @return .
      */
     @GetMapping("/provider/sign/queryname.do")
-    ResultVo names(@RequestParam String name);
+    ResultVo names(String name);
 
     /**
      * 查询全部
